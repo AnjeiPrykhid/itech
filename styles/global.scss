@@ -1,3 +1,9 @@
 @use './button.scss';
 @use './links.scss';
-@use'./../style.scss'
+@use'color';
+@use'./variables.scss';
+
+
+html{
+    background-color: aqua;
+  }
