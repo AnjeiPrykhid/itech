@@ -6,6 +6,7 @@
 html {
   background-color: var(--white-color);
   color: var(black-color);
+  font: var(--font);
 }
 
 body, ul, li, p, h1, h2, h3, h4, h5, h6, button {
@@ -13,8 +14,19 @@ body, ul, li, p, h1, h2, h3, h4, h5, h6, button {
   padding: 0;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.logo {
+  height: 35px;
+  width: 150px;
+}
 
 a {
+  color: var(--black-color);
   text-decoration: none;
   &:hover, &:active, &:focus {
     color: var(--violett-color);

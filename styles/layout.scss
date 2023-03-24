@@ -6,7 +6,14 @@ header, main, footer {
    align-items: center;
   }
 
-  
+  .navigation ul {
+    display: flex;
+    gap: calc(var(--gap) * 2);
+    font: var(--smaller-font);
+    text-transform: uppercase;
+    font: var(--smaller-font);
+    text-transform: uppercase;
+  }
  
   .container {
     width: 100%;

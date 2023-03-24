@@ -23,14 +23,12 @@ header {
     border-radius: 10px;
   }
 
-  .logo {
-    height: 35px;
-    width: 150px;
-  }
+
 
   .header__buttons {
     display: flex;
     gap: var(--gap);
+    width: 208px;
   }
 
   .navigation ul {
