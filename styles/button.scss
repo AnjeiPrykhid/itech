@@ -1,4 +1,33 @@
-button {
-    border: 2px solid gray;
+.button {
+    --size: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0 var(--gap);
+    height: var(--size);
+
+    border: 1px solid var(--grey-color);
+    border-radius: var(--size);
+    transition: var(--transition);
+    font: var(--smaller-font);
+    cursor: pointer;
+    &_round  {
+        width: var(--size);
+        height: var(--size);
+        border-radius: 50%;
+        padding: 0;
+    }
     
+    &:hover, &:active, &:focus {
+        border-color: var(--viollet-color);
+        background-color: var(--violett-color);
+        color: var(--white-color);
+        svg {
+            fill: var( --white-color);
+            
+        }
+    }
+   
 }

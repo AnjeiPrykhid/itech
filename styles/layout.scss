@@ -1,12 +1,13 @@
 @use'variables' as v;
 
 header, main, footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
+   display: flex;
+   flex-direction: column;
+   align-items: center;
   }
+
   
+ 
   .container {
     width: 100%;
   
@@ -26,3 +27,5 @@ header, main, footer {
         width: 1320px;
       }
   }
+
+ 
