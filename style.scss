@@ -7,6 +7,7 @@ html {
   background-color: var(--white-color);
   color: var(black-color);
   font: var(--font);
+  overflow-x: hidden;
 }
 
 body, ul, li, p, h1, h2, h3, h4, h5, h6, button {
@@ -29,14 +30,14 @@ a {
   color: var(--black-color);
   text-decoration: none;
   &:hover, &:active, &:focus {
-    color: var(--violett-color);
+    // color: var(--violett-color);
     transition: var(--transition);
 }
 }
 
 button {
   background-color: transparent;
-  // border: none;
+  border: none;
   outline: none;
 }
 
