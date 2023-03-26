@@ -8,8 +8,36 @@
   background-size: cover;
   background-repeat: no-repeat;
   margin-bottom: -30px;
-}
+  color: var(--white-color);
+  font:var(--smaller-font);
 
+  &_text {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 5px;
+    align-items: center;
+    justify-content: center;
+  }
+
+}
+.top_banner__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 10px;
+  gap: var(--gap);
+  text-align: center;
+}
+.top-banner__text {
+  &_text {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 5px;
+    align-items: center;
+    justify-content: center;
+  }
+}
 header {
   --top-radius: 30px;
   padding: var(--gap) 0;
@@ -19,13 +47,54 @@ header {
 
   .header__container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+   flex-direction: column;
     gap: var(--gap);
     border-radius: 10px;
+    @media (min-width: v.$tablet) {
+      flex-direction: row;
+    }
   }
 
+  .header__menu {
+    flex: 1;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: calc(var(--gap) *2) var(--gap);
+    border-bottom: 2px solid var(--grey-color);
 
+    @media (min-width: v.$tablet) {
+      border: none;
+      align-items: center;
+      padding: 0;
+      gap: var(--gap);
+    }
+  }
+
+  .header__triggers {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .header__mobile_trigger {
+    transition: var(--transition);
+    svg {
+      width: 35px;
+      height: 35px;
+    }
+    &:hover,
+    &:active,
+    &:focus,
+    &_active {
+
+      svg{fill: var(--violett-color) ;}
+
+    }
+    @media (min-width: v.$tablet) {
+      display: none;
+    }
+  }
 
   .header__buttons {
     position: relative;
@@ -68,7 +137,7 @@ header {
       }
     }
     @media (min-width: v.$tablet) {
-      right: -5px;
+      right: 45px;
     }
 
     @media (min-width: v.$desktop) {
@@ -77,8 +146,27 @@ header {
   }
  
 .header__navigation {
-  @media (max-width: v.$tablet) {
-    display: none;
+ul {
+  flex-wrap: wrap;
+  column-gap: var(--gap);
+
+}
+li{
+  width: 80px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+  @media (min-width: v.$tablet) {
+    position: relative;
+
+ul{
+  flex-wrap: nowrap;
+}
+li{
+  width: inherit;
+}
+
   }
 }
 
@@ -87,7 +175,7 @@ header {
     display: flex;
     column-gap: calc(var(--gap)* 2);
     row-gap: calc(var(--gap)/ 2);
-    gap: calc(var(--gap) * 2);
+    gap: var(--gap) calc(var(--gap) * 2);
     font: var(--smaller-font);
     text-transform: uppercase;
     font: var(--smaller-font);
@@ -121,7 +209,7 @@ nav {
       --top: 27px;
 
       position:absolute;
-      right: -18px;
+      right: 18px;
       width: 120px;
       height: var(--top);
       display: flex;
