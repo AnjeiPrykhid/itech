@@ -124,7 +124,7 @@ header {
 
     padding: 10px 0;
     top: 40px;
-    right: 60px;
+    right: 0px;
     gap: 5px;
 
     a {
@@ -137,7 +137,10 @@ header {
       }
     }
     @media (min-width: v.$tablet) {
-      right: 45px;
+      right: 57px;
+    }
+    @media (min-width: v.$bigger-tablet) {
+      right: 40px;
     }
 
     @media (min-width: v.$desktop) {

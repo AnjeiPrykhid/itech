@@ -1,0 +1,140 @@
+@use'./../../styles/variables.scss' as v;
+.one-app{
+    $double-gap: calc(var(--gap)* 2);
+    position: relative;
+    
+    margin-top: 50px;
+
+    &__animation {
+    background-image: url(./../../assets/images/one-app-bubble.png);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: -1;
+
+    animation: rotate-center 100s linear infinite both;
+    @keyframes rotate-center {
+        
+        0%{
+            transform: rotate(0);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+    }
+
+}
+    &__container{
+    display: flex;
+    flex-direction: column;
+    @media (min-width: v.$bigger-tablet) {
+        flex-direction: row;
+    }
+    }
+    &_right,
+    &_left{
+        @media (min-width: v.$bigger-tablet) {
+            flex: 1;
+        }
+    }
+    &_left {
+        display: flex;
+        flex-direction: column;
+        gap: $double-gap;
+        margin-bottom: $double-gap;
+
+        p {
+            align-self: flex-start;
+        }
+
+        @media (min-width: v.$bigger-tablet) {
+            margin-bottom: 0;
+        }
+    }
+
+    &_right{
+        height: 800px;
+        margin-top: 85px;
+        background-image: url(./../../assets/images/one-app-background.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        @media (max-width: v.$desktop) {
+            margin-top: 85px;
+            height: 465px;
+        }
+        @media (max-width: v.$bigger-tablet) {
+            
+            height: 880px;
+        }
+
+        @media (max-width: v.$tablet) {
+            
+            height: 600px;
+         }
+    }
+
+  
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        gap: $double-gap;
+        }
+
+        &__play{
+            position: relative;
+
+            span{
+                left: 20px;
+                padding: 0 20px;
+                position: absolute;
+
+                 @media (min-width: v.$bigger-tablet) {
+                    left: 30px;
+                }
+            }
+        }
+
+        br{
+            display: none;
+          }
+
+        @media (min-width: v.$bigger-tablet) {
+          br{
+            display: block;
+          }
+          }
+          &__infos {
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            gap: 20px;
+          }
+
+          &__info {
+            display: flex;
+            align-items: center;
+            
+            gap: 5px;
+            div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 8px;
+                background-color: var(--cream-color);
+                border-radius: 50%;
+
+                svg{
+                    color: var(--violett-color);
+                }
+            }
+            
+          }
+}
