@@ -1,0 +1,97 @@
+@use'./../../styles/variables.scss' as var;
+@use'./mixins.scss' as LocalMixins;
+
+.notero {
+    $double-gap: calc(var(--gap)* 2);
+
+   display: flex;
+   justify-content: center;
+   padding-top: 50px;
+   width: 100%;
+   position: relative;
+   @media (min-width: var.$desktop) {
+    padding-top: 150px;
+   }
+
+   &::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 50%;
+    bottom: 0;
+    background-image: url(./../../assets/images/notero-web.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+   }
+
+   &__container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+
+    @media (min-width: var.$desktop) {
+        flex-direction: row;
+       }
+
+   }
+   &_left, &_right {
+    @media (min-width: var.$desktop) {
+        flex: 1;
+       }
+   
+   }
+   &_left {
+
+       @include LocalMixins.half-container-image("./../../assets/images/notero-ipad.png");
+   }
+
+   &__animation {
+   @include LocalMixins.rotate-center(15%, "./../../assets/images/notero-bubbles.png");
+   }
+
+   &_right {
+    display: flex;
+    flex-direction: column;
+    gap: $double-gap;
+
+   p, 
+   a {
+    align-self: flex-start;
+    
+   }
+   }
+   &__description {
+    line-height: 30px;
+    br{
+        display: none;
+
+        @media (min-width: var.$bigger-mobile) {
+            display: block;
+           }
+    }
+    
+   }
+   &__benefit {
+display: flex;
+align-items: center;
+padding: 10px 0;
+gap: 10px;
+
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    background-color: var(--cream-color);
+    border-radius: 50%;
+}
+svg {
+    fill: var(--violett-color);
+}
+p{
+    align-self: center;
+   }  
+}
+}

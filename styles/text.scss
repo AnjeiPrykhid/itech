@@ -1,4 +1,11 @@
+@use'./../styles/variables.scss' as var;
 .text {
+    &__bold {
+        width: 700;
+    }
+    &__bigger-font{
+
+    }
     &_biggest {
         font: var(--biggest);
     }
@@ -25,5 +32,9 @@ color: var(--violett-color);
 font-size: 12px;
 padding: 5px 10px;
 }
+&_violett{
+  color: var(--violett-color);
+}
+
 
 }

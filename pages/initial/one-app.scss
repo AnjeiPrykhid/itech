@@ -1,23 +1,19 @@
-@use'./../../styles/variables.scss' as v;
+@use'./../../styles/variables.scss' as var;
+@use'./mixins.scss' as LocalMixins;
 .one-app{
     $double-gap: calc(var(--gap)* 2);
-    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     
     margin-top: 50px;
 
     &__animation {
-    background-image: url(./../../assets/images/one-app-bubble.png);
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    z-index: -1;
 
-    animation: rotate-center 100s linear infinite both;
+    @include LocalMixins.rotate-center(0, "./../../assets/images/one-app-bubble.png");
+
+
     @keyframes rotate-center {
         
         0%{
@@ -32,13 +28,13 @@
     &__container{
     display: flex;
     flex-direction: column;
-    @media (min-width: v.$bigger-tablet) {
+    @media (min-width: var.$bigger-tablet) {
         flex-direction: row;
     }
     }
     &_right,
     &_left{
-        @media (min-width: v.$bigger-tablet) {
+        @media (min-width: var.$bigger-tablet) {
             flex: 1;
         }
     }
@@ -52,32 +48,14 @@
             align-self: flex-start;
         }
 
-        @media (min-width: v.$bigger-tablet) {
+        @media (min-width: var.$bigger-tablet) {
             margin-bottom: 0;
         }
     }
 
     &_right{
-        height: 800px;
-        margin-top: 85px;
-        background-image: url(./../../assets/images/one-app-background.png);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-
-        @media (max-width: v.$desktop) {
-            margin-top: 85px;
-            height: 465px;
-        }
-        @media (max-width: v.$bigger-tablet) {
-            
-            height: 880px;
-        }
-
-        @media (max-width: v.$tablet) {
-            
-            height: 600px;
-         }
+       @include LocalMixins.half-container-image("./../../assets/images/one-app-background.png");
+        
     }
 
   
@@ -96,7 +74,7 @@
                 padding: 0 20px;
                 position: absolute;
 
-                 @media (min-width: v.$bigger-tablet) {
+                 @media (min-width: var.$bigger-tablet) {
                     left: 30px;
                 }
             }
@@ -106,7 +84,7 @@
             display: none;
           }
 
-        @media (min-width: v.$bigger-tablet) {
+        @media (min-width: var.$bigger-tablet) {
           br{
             display: block;
           }
@@ -137,4 +115,5 @@
             }
             
           }
+        
 }

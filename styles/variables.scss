@@ -14,6 +14,7 @@ $bigger-desktop: 1400px;
 :root {
 --smaller-font:700 11px 'Inter', sans-serif;
 --font: 400 13px 'Inter', sans-serif;
+--bigger-font: 700 18px "Inter", sans-serif;
 --biggest: 700 25px 'Inter', sans-serif;
 
     --transition: 0.3s;
@@ -26,6 +27,7 @@ $bigger-desktop: 1400px;
       @media (min-width: $tablet) {
         --smaller-font:700 12px 'Inter', sans-serif;
         --font: 400 15px 'Inter', sans-serif;
+        --bigger-font: 700 20px "Inter", sans-serif;
         --biggest: 700 52px 'Inter', sans-serif;
       }
 }
