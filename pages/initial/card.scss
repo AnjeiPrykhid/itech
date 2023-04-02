@@ -1,0 +1,51 @@
+@use'./../../styles/variables.scss' as var;
+@use'./mixins.scss' as LocalMixins;
+@use'./../../styles/mixins.scss' as maxinis;
+
+.card {
+    $double-gap: calc(var(--gap)* 2);
+    display: flex;
+    width: 260px;
+    height: 100px;
+    background-color: var(--white-color);
+   border-radius: 15px;
+   gap: $double-gap;
+   padding: var(--gap);
+   margin-bottom: 20px;
+   box-shadow: -4.104px 11.276px 38px 0px rgb(45 42 61 / 10%);
+
+   @media (min-width: var.$bigger-mobile) {
+    width: 460px;
+  }
+
+  @media (min-width: var.$bigger-tablet) {
+    height: 134px;
+  }
+
+
+&__foden {
+    margin-left: 130px;
+   
+    @media (max-width: 438px) {
+        margin-left: 0px;
+      }
+}
+   svg{
+    fill: rgb(250, 246, 2);    
+    }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 5px;
+  }
+
+  &__left {
+    display: none;
+
+    @media (min-width: var.$bigger-mobile) {
+      display: block;
+    }
+  }
+}

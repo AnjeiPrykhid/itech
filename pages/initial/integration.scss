@@ -23,6 +23,10 @@ align-items: center;
     justify-content: space-between;
     align-items: center;
     gap: var(--gap);
+    @media (max-width: 800px) {
+        flex-direction: column;
+        padding-top: 20px;
+      }
 
    div {
     gap: var(--gap);

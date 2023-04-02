@@ -1,0 +1,72 @@
+@use'./../../styles/variables.scss' as var;
+@use'./mixins.scss' as LocalMixins;
+@use'./../../styles/mixins.scss' as maxinis;
+
+.testimonials {
+    $double-gap: calc(var(--gap)* 2);
+
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    margin: 69px 0;
+
+&__container {
+  display: flex;
+  flex-direction: column;
+  gap: $double-gap;
+
+  @media (min-width: var.$desktop) {
+    flex-direction: row;
+
+}
+
+
+}
+
+.testomonials__left {
+    display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   gap: var(--gap);
+}
+
+&__buttons{
+    display: flex;
+    gap: var(--gap);
+}
+
+&__left,
+&__right {
+    @media (min-width: var.$desktop) {
+        flex: 1;
+    }
+}
+
+
+
+
+
+
+&__right {
+    position: relative;
+    
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -10%;
+        left: -10%;
+        bottom: -10%;
+        right: -10%;
+        z-index: -1;
+
+@include LocalMixins.half-container-image("./../../assets/images/testimonials-globe.svg");
+
+animation: rotate-center 100s linear infinite both;
+    }
+}
+
+
+
+}

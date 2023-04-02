@@ -24,9 +24,7 @@
         );
     }
 
-&_purpule {
-    color: purple;
-}
+
 &_with-bg{
 background-color: #f7f4ff;
 color: var(--violett-color);
@@ -37,12 +35,18 @@ padding: 5px 10px;
   color: var(--violett-color);
 }
 
-&_smallest{
+&__smallest{
     font: var(--smallest-font);
 }
 
 &_smaller{
     font: var(--smaller-font);
 }
+&__blue {
+    color: var(--purple-color);
+}
 
+&__grey {
+    color: var(--grey-color);
+}
 }
