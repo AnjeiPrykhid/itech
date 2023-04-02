@@ -31,6 +31,30 @@
    gap: var(--gap);
 }
 
+&__icons{
+    display: flex;
+    gap:  35px;
+
+    @media (min-width: var.$bigger-mobile) {
+        gap: 45px;
+    }
+    &__left,
+    &__right{
+        width: 101px; 
+    }
+
+    &__left {
+        border-right: 1px solid rgb(232, 232, 232);
+    }
+
+    img, p{
+        margin-bottom: 10px;
+    }
+    img {
+        height: 66px;
+    }
+}
+
 &__buttons{
     display: flex;
     gap: var(--gap);

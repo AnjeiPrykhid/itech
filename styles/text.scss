@@ -4,8 +4,8 @@
     &__bold {
         font-weight: 700;
     }
-    &__bigger-font{
-
+    &__bigger{
+font: var(--bigger);
     }
     &_biggest {
         font: var(--biggest);
