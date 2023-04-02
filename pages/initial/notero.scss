@@ -1,12 +1,12 @@
 @use'./../../styles/variables.scss' as var;
 @use'./mixins.scss' as LocalMixins;
+@use'./../../styles/mixins.scss' as maxinis;
 
 .notero {
     $double-gap: calc(var(--gap)* 2);
 
    display: flex;
    justify-content: center;
-   padding-top: 50px;
    width: 100%;
    position: relative;
    @media (min-width: var.$desktop) {
@@ -20,15 +20,16 @@
     left: 0;
     right: 50%;
     bottom: 0;
-    background-image: url(./../../assets/images/notero-web.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  @include maxinis.background-image (
+    $image: "./../../assets/images/notero-web.png",
+    $size: contain);
+    z-index: -1;
+    
    }
 
    &__container {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: var(--gap);
 
     @media (min-width: var.$desktop) {
@@ -78,6 +79,10 @@ display: flex;
 align-items: center;
 padding: 10px 0;
 gap: 10px;
+
+.text__bold{
+    font-weight: 700;
+}
 
 div {
     display: flex;

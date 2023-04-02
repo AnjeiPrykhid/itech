@@ -1,0 +1,92 @@
+@use'./../../styles/variables.scss' as var;
+@use'./mixins.scss' as LocalMixins;
+
+.focus {
+    $double-gap: calc(var(--gap)* 2);
+
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+  
+    &__container {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: var(--gap);
+    
+        @media (min-width: var.$desktop) {
+            flex-direction: row;
+           }
+    
+       }
+   
+     
+       &_left, &_right {
+        @media (min-width: var.$desktop) {
+            flex: 1;
+           }
+       
+       }
+       &_left {
+    @include LocalMixins.half-container-image("./../../assets/images/focus-table.png");
+    }
+
+     &_right {
+            display: flex;
+            flex-direction: column;
+            gap: $double-gap;
+       
+           p, 
+           a {
+            align-self: flex-start;
+            
+           }
+           }
+
+           &__benefit {
+          
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            gap: 10px;
+            opacity: 0.6;
+
+            &_active {
+                opacity: 1;
+            }
+         
+
+            p{
+                position: relative;
+                align-self: center;
+                padding-left: 20px;
+
+                font-weight: 700;
+
+                &::before{
+                    content: "*";
+                    top: 2.5px;
+                    left: 0;
+                    bottom: 0;
+                    position: absolute;
+                    color: var(--violett-color);
+                }
+            }
+          
+        }    
+    
+
+    &__animation {
+        @include LocalMixins.rotate-center(15%, "./../../assets/images/notero-bubbles.png");
+        }
+
+      
+ &__description {
+         line-height: 30px;
+         
+         
+        }
+
+        }
+       
+    
