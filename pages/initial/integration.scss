@@ -1,6 +1,49 @@
+@use'./../../styles/variables.scss' as var;
+@use'./mixins.scss' as LocalMixins;
+@use'./../../styles/mixins.scss' as maxinis;
+
 .integration{
-display: flex;
+    position: relative;
+width: 100%;
+margin: var(--gap) 0;
+@include maxinis.background-image ("./../../assets/images/integration-background.png");
+
+&__container {
+    display: flex;
 flex-direction: column;
 align-items: center;
-gap: var(--gap);
+    gap: var(--gap);
+}
+
+&__icons{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+   div {
+    animation: slide-up-down 1.7s ease-in-out infinite alternate both;
+    
+    &:nth-child(2){
+        animation-delay: 0.5s;
+    }
+    &:nth-child(3){
+        animation-delay: 1s;
+    }
+    &:nth-child(4){
+        animation-delay: 1.5s;
+    }
+    &:nth-child(5){
+        animation-delay: s;
+    }
+   }
+}
+.text_biggest {
+    text-align: center;
+}
+
+
+
+.features__wave{
+ transform: scaleY(-1);
+ }
 }
