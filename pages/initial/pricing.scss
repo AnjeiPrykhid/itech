@@ -1,0 +1,84 @@
+@use'./../../styles/variables.scss' as var;
+@use'./mixins.scss' as LocalMixins;
+@use'./../../styles/mixins.scss' as maxinis;
+
+.pricing {
+    $double-gap: calc(var(--gap)* 2);
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--gap);
+       
+       
+    }
+
+&__heading{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    img {
+        height: 25px;
+    }
+}
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap);
+        flex-wrap: wrap;
+        
+        @media (min-width: var.$bigger-tablet) {
+            flex-direction: row;
+            gap: 0;
+        }
+    }
+    
+
+    .pricing__left,
+    .pricing__right {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap);
+        border: 1px solid var(--grey-color); 
+       padding: $double-gap;
+        border-radius: var(--gap);
+
+        a {
+            align-self: flex-start;
+        }
+    }
+
+    .pricing__left{
+        @media (min-width: var.$bigger-tablet) {
+            border-right: none;
+            border-top-right-radius: 0;
+        border-bottom-right-radius: 0; 
+        }
+        
+
+       
+    }
+    .pricing__right{
+       @media (min-width: var.$bigger-tablet) {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+       }
+       
+    }
+
+    .pricing__benefits{
+        border-top: 1px solid var(--grey-color); 
+        padding-top: var(--gap);
+
+        svg {
+            fill: var(--white-color);
+        }
+      
+    }
+    .notero__benefit div{
+        background-color: var(--violett-color);
+    }
+}
