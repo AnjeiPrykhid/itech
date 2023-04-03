@@ -1,0 +1,45 @@
+@use'./../../styles/variables.scss' as var;
+@use'./mixins.scss' as LocalMixins;
+@use'./../../styles/mixins.scss' as maxinis;
+
+.support {
+    $double-gap: calc(var(--gap)* 2);
+
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    
+    
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--gap);
+    
+        // @media (min-width: var.$desktop) {
+        //     flex-direction: row;
+        //    }
+    
+       }
+
+&__box {
+    display: flex;
+    flex-direction: column;
+  
+    @media (min-width: var.$bigger-tablet) {
+        flex-direction: row;
+    }
+}
+
+    &__left {
+        display: flex;
+        flex-direction: column;
+    }
+    &__right {
+        display: flex;
+        flex-direction: column;
+    }
+
+   
+}
